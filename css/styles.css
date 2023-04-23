@@ -602,11 +602,24 @@ body {
    background: #E7E9FC;
    border: 1px solid rgba(0, 0, 0, 0.1);
    border-radius: 50%;
+
+   transition: background-color var(--hover-focus-trans);
+}
+.modal-btn:hover,
+.modal-btn:focus {
+   background-color: var(--hover-focus);
 }
 
 .modal-icon {
    fill: rgba(46, 47, 66, 1);
+   transition: color var(--hover-focus-trans);
 }
+
+.modal-btn:hover .modal-icon,
+.modal-btn:focus .modal-icon {
+   fill: #FFFFFF;
+}
+
 /* Portfolio */
 /* Filters */
 .filters-list {
