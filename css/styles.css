@@ -134,6 +134,7 @@ body {
    width: 100%;
    min-height: 72px;
 
+   background-color: var(--primary-bg-color);
    border-bottom: 1px solid #E7E9FC;
    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
@@ -184,14 +185,13 @@ body {
     
    color: var(--nav-menu-color);
 
-   transition: background-color var(--hover-focus-trans), color var(--hover-focus-trans);
+   transition: color var(--hover-focus-trans);
  }
- /*  */
+
 .nav-link:hover,
 .nav-link:focus {
    color: var(--hover-focus);
 }
- 
 
 .current-page {
    color: var(--hover-focus);
@@ -199,13 +199,16 @@ body {
 .nav-link::after {
    content: '';
    position: absolute;
-   bottom: 0;
+   bottom: -1px;
    left:0;
 
    width: 100%;
    height: 4px;
    
+   background-color: transparent;
    border-radius: 2px;
+
+   transition: background-color var(--hover-focus-trans);
 }
 
 .nav-link.current-page::after,
@@ -233,7 +236,7 @@ body {
    
    color: var(--contacts-text-color);
 
-   transition: background-color var(--hover-focus-trans), color var(--hover-focus-trans);
+   transition: color var(--hover-focus-trans);
  } 
 
 .contacts-link:hover, 
@@ -298,7 +301,7 @@ body {
    color: var(--hero-button-color);
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-   transition: background-color var(--hover-focus-trans), color var(--hover-focus-trans), box-shadow var(--hover-focus-trans);
+   transition: background-color var(--hover-focus-trans);
 }
 
 .hero-button:hover,
@@ -430,7 +433,7 @@ body {
    background-color: var(--link-color);
    border-radius: 50%;
 
-   transition: background-color var(--hover-focus-trans), color var(--hover-focus-trans);
+   transition: background-color var(--hover-focus-trans);
 }
 .socials-link:hover,
 .socials-link:focus {
@@ -474,7 +477,7 @@ body {
    border-radius: 4px;
    color: var(--customers-link-color);
 
-   transition: background-color var(--hover-focus-trans), color var(--hover-focus-trans);
+   transition: color var(--hover-focus-trans), border-color var(--hover-focus-trans);
 }
 .customers-link:hover,
 .customers-link:focus {
@@ -645,7 +648,7 @@ body {
    border: 1px solid #E7E9FC;
    border-radius: 4px;
    
-   transition: background-color var(--hover-focus-trans), color var(--hover-focus-trans), box-shadow var(--hover-focus-trans)  ;
+   transition: background-color var(--hover-focus-trans), color var(--hover-focus-trans), border var(--hover-focus-trans), box-shadow var(--hover-focus-trans)  ;
 }
 .buttons:hover, .buttons:focus {
    background-color: var(--hover-focus);
@@ -734,7 +737,9 @@ body {
 }
 
 .gallery-link:hover .thumb::before,
-.gallery-link:hover .img-text {
+.gallery-link:hover .img-text,
+.gallery-link:focus .thumb::before,
+.gallery-link:focus .img-text {
    transform: translateY(0);
 }
 
